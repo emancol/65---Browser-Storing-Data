@@ -1,0 +1,29 @@
+<html>
+
+<body>
+  <div id="container">
+    <button type="button" id="fetch-post">
+      Fetch Post from LocalStorage
+    </button>
+
+    <h2>Post: <span id="post-title"></span></h2>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // Object.keys(localStorage).forEach((key) =>
+  //   console.log(`${key}: ${localStorage.getItem(key)}`)
+  // );
+
+  let data = JSON.parse(localStorage.data)
+  let span = document.querySelector('#post-title')
+
+  for (key in data) {
+    if (key === 'title') {
+      span.innerHTML = data.title
+    }
+  }
+
+</script>
